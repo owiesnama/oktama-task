@@ -1,0 +1,17 @@
+1592406564a:1:{s:15:"site/footer.htm";a:5:{s:8:"fileName";s:15:"site/footer.htm";s:7:"content";s:312:"<footer class="flex flex-col justify-between items-center px-6 py-2 bg-gray-800 sm:flex-row">
+    <a href="#" class="text-xl font-bold text-gray-100 hover:text-gray-400">Ok tamam</a>
+    
+    <p class="py-2 text-gray-100 sm:py-0">All rights reserved</p>
+
+    <div class="flex -mx-2">
+       
+    </div>
+</footer>";s:5:"mtime";i:1592398111;s:6:"markup";s:312:"<footer class="flex flex-col justify-between items-center px-6 py-2 bg-gray-800 sm:flex-row">
+    <a href="#" class="text-xl font-bold text-gray-100 hover:text-gray-400">Ok tamam</a>
+    
+    <p class="py-2 text-gray-100 sm:py-0">All rights reserved</p>
+
+    <div class="flex -mx-2">
+       
+    </div>
+</footer>";s:4:"code";N;}}
