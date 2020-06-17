@@ -1,6 +1,7 @@
 <?php namespace OkTamam\Companies\Components;
 
 use Cms\Classes\ComponentBase;
+use OkTamam\Companies\Models\Company;
 
 class Companies extends ComponentBase
 {
@@ -12,12 +13,7 @@ class Companies extends ComponentBase
         ];
     }
 
-    public function employees(){
-        return [
-            ['name' => 'owiesnama',
-             'phone' => '0920754234',
-             'email' => 'owiesnama@gmail.com',
-            ]
-        ];
+    public function companies(){
+        return Company::all();
     }
 }

@@ -1,3 +1,5 @@
-<p>This is the default markup for component dashboard</p>
-
-<small>You can delete this file if you want</small>
+<div class="grid grid-cols-3 gap-4">
+{% for company in __SELF__.recentCompanies %}
+<div class="border rounded p-2"></div>
+{% endfor %}
+</div>

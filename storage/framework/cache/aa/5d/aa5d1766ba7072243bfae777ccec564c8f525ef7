@@ -1,4 +1,4 @@
-1592406564a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1705:"[account]
+1592414800a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:1887:"[account]
 paramCode = "code"
 forceSecure = 0
 requirePassword = 0
@@ -6,8 +6,11 @@ requirePassword = 0
 <header class="bg-gray-900">
     <div class="container mx-auto px-6">
         <nav class="flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center">
-            <div>
-                <a href="#" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
+            <div class="flex items-center">
+                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
+                <ul class="text-white flex items-center mx-4">
+                    <li><a href="/companies">All Companies</a></li>
+                </ul>
             </div>
 
             <div class="flex items-center -mx-2 mt-2 sm:mt-0">
@@ -45,11 +48,14 @@ requirePassword = 0
             </div>
         </div>
     </div>
-</header>";s:5:"mtime";i:1592401074;s:6:"markup";s:1632:"<header class="bg-gray-900">
+</header>";s:5:"mtime";i:1592407819;s:6:"markup";s:1814:"<header class="bg-gray-900">
     <div class="container mx-auto px-6">
         <nav class="flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center">
-            <div>
-                <a href="#" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
+            <div class="flex items-center">
+                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
+                <ul class="text-white flex items-center mx-4">
+                    <li><a href="/companies">All Companies</a></li>
+                </ul>
             </div>
 
             <div class="flex items-center -mx-2 mt-2 sm:mt-0">

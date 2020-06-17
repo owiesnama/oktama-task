@@ -1,6 +1,9 @@
-<?php namespace OkTamam\Companies\Components;
+<?php
+
+namespace OkTamam\Companies\Components;
 
 use Cms\Classes\ComponentBase;
+use OkTamam\Companies\Models\Company;
 
 class Dashboard extends ComponentBase
 {
@@ -12,8 +15,8 @@ class Dashboard extends ComponentBase
         ];
     }
 
-    public function defineProperties()
+    public function recentCompanies()
     {
-        return [];
+        return Company::latest()->take(4);
     }
 }

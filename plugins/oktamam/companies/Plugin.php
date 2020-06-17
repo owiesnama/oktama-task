@@ -36,7 +36,9 @@ class Plugin extends PluginBase
         return [
             'OkTamam\Companies\Components\Companies' => 'companies',
             'OkTamam\Companies\Components\Employees' => 'employees',
+            'OkTamam\Companies\Components\CreateCompany' => 'createCompany',
             'OkTamam\Companies\Components\CreateEmployee' => 'createEmployee',
+            'OkTamam\Companies\Components\Dashboard' => 'companiesDashboard',
         ];
     }
 }

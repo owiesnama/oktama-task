@@ -152,4 +152,7 @@
   'RainLab\\User\\Models\\Throttle' => 'plugins/rainlab/user/models/Throttle.php',
   'OkTamam\\Companies\\Components\\CreateEmployee' => 'plugins/oktamam/companies/components/CreateEmployee.php',
   'OkTamam\\Companies\\Models\\Employee' => 'plugins/oktamam/companies/models/Employee.php',
+  'OkTamam\\Companies\\Components\\Dashboard' => 'plugins/oktamam/companies/components/Dashboard.php',
+  'OkTamam\\Companies\\Models\\Company' => 'plugins/oktamam/companies/models/Company.php',
+  'OkTamam\\Companies\\Components\\CreateCompany' => 'plugins/oktamam/companies/components/CreateCompany.php',
 );
