@@ -16,4 +16,11 @@ class Companies extends ComponentBase
     public function companies(){
         return Company::all();
     }
+
+    public function onDelete(){
+        $company = Company::find(post('_companyId'));
+        $company->delete();
+
+        return back();
+    }
 }

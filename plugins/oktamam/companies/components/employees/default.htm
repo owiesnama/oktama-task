@@ -17,6 +17,13 @@
                     <td class="px-4 py-4">{{employee.phone}}</td>
                     <td class="px-4 py-4">{{employee.email}}</td>
                     <td class="px-4 py-4">{{employee.company.name ?:'---'}}</td>
+                    <td>
+                        <form data-request="{{__SELF__}}::onDelete">
+                            <input type="hidden" value="{{employee.id}}" name="_employeeId" />
+                            <button
+                                class="border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 {%endfor%}
             </tbody>

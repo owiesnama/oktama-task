@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination li {
+    color: gray;
+    margin: 0 8px;
+}
+
+.pagination li.active {
+    color: slateblue;
+    margin: 0 8px;
+}
+
+.pagination li.disabled {
+    cursor: no-drop;
+}

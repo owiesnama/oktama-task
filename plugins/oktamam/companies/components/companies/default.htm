@@ -1,9 +1,15 @@
 <div class="grid grid-cols-3 gap-4 mt-8">
     {% for company in __SELF__.companies %}
     <div class="border rounded p-2">
-        <a class="text-xl font-bold text-indigo-800 cursor-pointer">
-            {{company.name}}
-        </a>
+        <div class="flex justify-between mb-4">
+            <a class="text-xl font-bold text-indigo-800 cursor-pointer">
+                {{company.name}}
+            </a>
+            <form data-request="{{__SELF__}}::onDelete">
+                <input type="hidden" value="{{company.id}}" name="_companyId"/>
+                <button class="border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2">Delete</button>
+            </form>
+        </div>
         <div class="flex text-gray-500 text-sm justify-between">
             <div>{{company.website}}</div>
             <div>{{company.email}}</div>

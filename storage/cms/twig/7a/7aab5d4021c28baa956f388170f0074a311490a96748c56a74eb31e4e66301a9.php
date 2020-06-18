@@ -61,11 +61,15 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         // line 12
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/main.css");
         echo "\" rel=\"stylesheet\">
-        ";
+        <link href=\"";
         // line 13
+        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/styles.css");
+        echo "\" rel=\"stylesheet\">
+        ";
+        // line 14
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 14
+        // line 15
         echo "        <script src=\"";
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
         echo "\"></script>
@@ -75,33 +79,33 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         <!-- Header -->
         <header id=\"layout-header\">
             ";
-        // line 20
+        // line 21
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 21
+        // line 22
         echo "        </header>
 
         <!-- Content -->
         <section id=\"layout-content\" class=\"flex-1\">
             ";
-        // line 25
-        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
         // line 26
+        echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
+        // line 27
         echo "        </section>
 
         <!-- Footer -->
         <footer id=\"layout-footer\">
             ";
-        // line 30
+        // line 31
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("site/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 31
+        // line 32
         echo "        </footer>
 
         ";
-        // line 33
+        // line 34
         $_minify = System\Classes\CombineAssets::instance()->useMinify;
         if ($_minify) {
             echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
@@ -112,11 +116,11 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         }
         echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
         unset($_minify);
-        // line 34
+        // line 35
         echo "        ";
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 35
+        // line 36
         echo "
     </body>
 </html>";
@@ -134,7 +138,7 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
 
     public function getDebugInfo()
     {
-        return array (  120 => 35,  116 => 34,  105 => 33,  101 => 31,  97 => 30,  91 => 26,  89 => 25,  83 => 21,  79 => 20,  69 => 14,  66 => 13,  62 => 12,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  124 => 36,  120 => 35,  109 => 34,  105 => 32,  101 => 31,  95 => 27,  93 => 26,  87 => 22,  83 => 21,  73 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -151,6 +155,7 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         <meta name=\"generator\" content=\"OctoberCMS\">
         <link rel=\"icon\" type=\"image/png\" href=\"{{ 'assets/images/october.png'|theme }}\">
         <link href=\"{{ 'assets/css/main.css'|theme }}\" rel=\"stylesheet\">
+        <link href=\"{{ 'assets/css/styles.css'|theme }}\" rel=\"stylesheet\">
         {% styles %}
         <script src=\"{{ 'assets/vendor/jquery.js'|theme}}\"></script>
     </head>

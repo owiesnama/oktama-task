@@ -17,4 +17,11 @@ class Employees extends ComponentBase
     public function employees(){
         return Employee::paginate(10);
     }
+
+    public function onDelete(){
+        Employee::find(post('_employeeId'))
+        ->delete();
+
+        return back();
+    }
 }

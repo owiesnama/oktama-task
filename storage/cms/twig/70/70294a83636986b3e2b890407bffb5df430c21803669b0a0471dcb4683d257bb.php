@@ -70,20 +70,33 @@ class __TwigTemplate_ba3e018674318e565c1030c15d4d9066ef02aaab1acadc000d80efad668
             // line 19
             ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["employee"], "company", [], "any", false, false, false, 19), "name", [], "any", false, false, false, 19)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["employee"], "company", [], "any", false, false, false, 19), "name", [], "any", false, false, false, 19), "html", null, true))) : (print ("---")));
             echo "</td>
+                    <td>
+                        <form data-request=\"";
+            // line 21
+            echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
+            echo "::onDelete\">
+                            <input type=\"hidden\" value=\"";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["employee"], "id", [], "any", false, false, false, 22), "html", null, true);
+            echo "\" name=\"_employeeId\" />
+                            <button
+                                class=\"border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2\">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employee'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 29
         echo "            </tbody>
         </table>
     </div>
 
     ";
-        // line 26
-        echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "employees", [], "any", false, false, false, 26), "render", [], "any", false, false, false, 26);
+        // line 33
+        echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "employees", [], "any", false, false, false, 33), "render", [], "any", false, false, false, 33);
         echo "
 
 </div>";
@@ -101,7 +114,7 @@ class __TwigTemplate_ba3e018674318e565c1030c15d4d9066ef02aaab1acadc000d80efad668
 
     public function getDebugInfo()
     {
-        return array (  86 => 26,  80 => 22,  71 => 19,  67 => 18,  63 => 17,  59 => 16,  56 => 15,  52 => 14,  37 => 1,);
+        return array (  99 => 33,  93 => 29,  80 => 22,  76 => 21,  71 => 19,  67 => 18,  63 => 17,  59 => 16,  56 => 15,  52 => 14,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -125,6 +138,13 @@ class __TwigTemplate_ba3e018674318e565c1030c15d4d9066ef02aaab1acadc000d80efad668
                     <td class=\"px-4 py-4\">{{employee.phone}}</td>
                     <td class=\"px-4 py-4\">{{employee.email}}</td>
                     <td class=\"px-4 py-4\">{{employee.company.name ?:'---'}}</td>
+                    <td>
+                        <form data-request=\"{{__SELF__}}::onDelete\">
+                            <input type=\"hidden\" value=\"{{employee.id}}\" name=\"_employeeId\" />
+                            <button
+                                class=\"border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2\">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 {%endfor%}
             </tbody>
