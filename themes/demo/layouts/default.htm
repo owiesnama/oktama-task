@@ -1,9 +1,17 @@
 description = "Default layout"
+
+[session]
+security = "all"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
 ==
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8">{% component 'session' %}
         <title>October CMS - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">

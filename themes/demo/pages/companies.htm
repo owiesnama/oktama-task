@@ -8,8 +8,12 @@ is_hidden = 0
 ==
 <div class="container mx-auto">
     <h1 class="border-b p-4 text-2xl font-bold text-gray-800 mb-4">Companies</h1>
-    <a href="/company/create" 
-    class="inline-block py-4 px-6 rounded border border-indigo-500 text-indigo-600 hover:text-white hover:bg-indigo-600"
-    >Create new company</a>
+    {% if user.isAdmin()%}
+
+    <a href="/company/create"
+        class="inline-block py-4 px-6 rounded border border-indigo-500 text-indigo-600 hover:text-white hover:bg-indigo-600">Create
+        new company</a>
+    {% endif %}
+
     {% component 'companies' %}
 </div>

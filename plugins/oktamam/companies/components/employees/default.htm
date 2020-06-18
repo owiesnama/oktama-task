@@ -8,6 +8,9 @@
                     <th class="px-4 py-2 bg-gray-200 " style="background-color:#f8f8f8">Name</th>
                     <th class="px-4 py-2 " style="background-color:#f8f8f8">Phone</th>
                     <th class="px-4 py-2 " style="background-color:#f8f8f8">Email</th>
+                    {% if user.isAdmin()%}
+                    <th>actions</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody class="text-sm font-normal text-gray-700">
@@ -17,6 +20,7 @@
                     <td class="px-4 py-4">{{employee.phone}}</td>
                     <td class="px-4 py-4">{{employee.email}}</td>
                     <td class="px-4 py-4">{{employee.company.name ?:'---'}}</td>
+                    {% if user.isAdmin()%}
                     <td>
                         <div class="flex">
                             <form data-request="{{__SELF__}}::onDelete">
@@ -26,9 +30,10 @@
                             </form>
                             <a href="/employee/{{employee.id}}/update"
                                 class="inline-block mx-2 border rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2">Edit</a>
-                    
+
                         </div>
                     </td>
+                    {% endif %}
                 </tr>
                 {%endfor%}
             </tbody>

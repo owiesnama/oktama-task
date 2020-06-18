@@ -1,10 +1,13 @@
-<?php namespace OkTamam\Companies\Components;
+<?php
+
+namespace OkTamam\Companies\Components;
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use OkTamam\Companies\Models\Company;
+use RainLab\User\Facades\Auth;
 
 class CreateCompany extends ComponentBase
 {
@@ -18,15 +21,22 @@ class CreateCompany extends ComponentBase
         ];
     }
 
-    public function onRun(){
-        if($id = $this->param('company')){
+    public function onRun()
+    {
+        if ($id = $this->param('company')) {
             $this->company = Company::find($id);
-        }else{
+        } else {
             $this->company = new Company;
+        }
+
+        if (!(Auth::user()->isAdmin())) {
+
+            return redirect('/');
         }
     }
 
-    public function onAddCompany(){
+    public function onAddCompany()
+    {
         $company = new Company;
 
         $company->name = post('name');
@@ -40,7 +50,8 @@ class CreateCompany extends ComponentBase
         return redirect('/companies');
     }
 
-    public function onUpdateCompany(){
+    public function onUpdateCompany()
+    {
         $company = Company::find($this->param('company'));
         $company->name = post('name');
         $company->website = post('website');

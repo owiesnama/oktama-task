@@ -50,34 +50,39 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
             echo "
             </a>
             <div class=\"flex\">
-
-                <form data-request=\"";
-            // line 10
-            echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
-            echo "::onDelete\">
+                ";
+            // line 9
+            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "isAdmin", [], "method", false, false, false, 9)) {
+                // line 10
+                echo "                <form data-request=\"";
+                echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
+                echo "::onDelete\">
                     <input type=\"hidden\" value=\"";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 11), "html", null, true);
-            echo "\" name=\"_companyId\" />
+                // line 11
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 11), "html", null, true);
+                echo "\" name=\"_companyId\" />
                     <button
                         class=\"border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2\">Delete</button>
                 </form>
-                <a href=\"/company/";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 15), "html", null, true);
-            echo "/update\"
-                    class=\"border inline-block mx-2 rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2\">Edit</a>
 
-            </div>
+                <a href=\"/company/";
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 16), "html", null, true);
+                echo "/update\"
+                    class=\"border inline-block mx-2 rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2\">Edit</a>
+                ";
+            }
+            // line 19
+            echo "            </div>
         </div>
         <div class=\"flex text-gray-500 text-sm justify-between\">
             <div>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "website", [], "any", false, false, false, 21), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "website", [], "any", false, false, false, 22), "html", null, true);
             echo "</div>
             <div>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "email", [], "any", false, false, false, 22), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "email", [], "any", false, false, false, 23), "html", null, true);
             echo "</div>
         </div>
     </div>
@@ -86,7 +91,7 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['company'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 27
         echo "</div>";
     }
 
@@ -102,7 +107,7 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
 
     public function getDebugInfo()
     {
-        return array (  90 => 26,  80 => 22,  76 => 21,  67 => 15,  60 => 11,  56 => 10,  49 => 6,  44 => 3,  40 => 2,  37 => 1,);
+        return array (  95 => 27,  85 => 23,  81 => 22,  76 => 19,  70 => 16,  62 => 11,  57 => 10,  55 => 9,  49 => 6,  44 => 3,  40 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -115,15 +120,16 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
                 {{company.name}}
             </a>
             <div class=\"flex\">
-
+                {% if user.isAdmin() %}
                 <form data-request=\"{{__SELF__}}::onDelete\">
                     <input type=\"hidden\" value=\"{{company.id}}\" name=\"_companyId\" />
                     <button
                         class=\"border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2\">Delete</button>
                 </form>
+
                 <a href=\"/company/{{company.id}}/update\"
                     class=\"border inline-block mx-2 rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2\">Edit</a>
-
+                {% endif %}
             </div>
         </div>
         <div class=\"flex text-gray-500 text-sm justify-between\">

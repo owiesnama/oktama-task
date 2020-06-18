@@ -5,6 +5,7 @@ namespace OkTamam\Companies\Components;
 use Cms\Classes\ComponentBase;
 use OkTamam\Companies\Models\Company;
 use OkTamam\Companies\Models\Employee;
+use RainLab\User\Facades\Auth;
 
 class CreateEmployee extends ComponentBase
 {
@@ -24,6 +25,13 @@ class CreateEmployee extends ComponentBase
             $this->employee = Employee::find($id);
         } else {
             $this->employee = new Employee;
+        }
+
+
+
+        if (!(Auth::user()->isAdmin())) {
+
+            return redirect('/');
         }
     }
 

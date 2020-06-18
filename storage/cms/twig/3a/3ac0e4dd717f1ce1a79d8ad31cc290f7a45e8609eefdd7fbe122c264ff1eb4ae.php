@@ -92,7 +92,7 @@ class __TwigTemplate_c9200c04373ff1d530cd63bc1d87e53045c5f09d38e0279ecb82cb3a5e0
             <button type=\"submit\"
                 class=\"px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700\">";
         // line 36
-        echo ((twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "param", [0 => "company"], "method", false, false, false, 36)) ? ("Update") : ("Save"));
+        echo ((twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "param", [0 => "employee"], "method", false, false, false, 36)) ? ("Update") : ("Save"));
         echo "</button>
         </div>
     </form>
@@ -151,7 +151,7 @@ class __TwigTemplate_c9200c04373ff1d530cd63bc1d87e53045c5f09d38e0279ecb82cb3a5e0
 
         <div class=\"flex justify-end mt-4\">
             <button type=\"submit\"
-                class=\"px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700\">{{__SELF__.param('company') ? 'Update' : 'Save'}}</button>
+                class=\"px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700\">{{__SELF__.param('employee') ? 'Update' : 'Save'}}</button>
         </div>
     </form>
 </div>", "/home/owiesnama/Projects/ok-tamam/plugins/oktamam/companies/components/createcompany/default.htm", "");

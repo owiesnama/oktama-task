@@ -37,9 +37,13 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         echo "<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"utf-8\">
-        <title>October CMS - ";
+        <meta charset=\"utf-8\">";
+        // line 4
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("session"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
         // line 5
+        echo "        <title>October CMS - ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["this"] ?? null), "page", [], "any", false, false, false, 5), "title", [], "any", false, false, false, 5), "html", null, true);
         echo "</title>
         <meta name=\"description\" content=\"";
@@ -138,7 +142,7 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
 
     public function getDebugInfo()
     {
-        return array (  124 => 36,  120 => 35,  109 => 34,  105 => 32,  101 => 31,  95 => 27,  93 => 26,  87 => 22,  83 => 21,  73 => 15,  70 => 14,  66 => 13,  62 => 12,  58 => 11,  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  128 => 36,  124 => 35,  113 => 34,  109 => 32,  105 => 31,  99 => 27,  97 => 26,  91 => 22,  87 => 21,  77 => 15,  74 => 14,  70 => 13,  66 => 12,  62 => 11,  55 => 7,  51 => 6,  46 => 5,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -146,7 +150,7 @@ class __TwigTemplate_092ef961c0c66072c8e224c6b0354e387e95ec489479b6ee2de9b3be2d9
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"utf-8\">
+        <meta charset=\"utf-8\">{% component 'session' %}
         <title>October CMS - {{ this.page.title }}</title>
         <meta name=\"description\" content=\"{{ this.page.meta_description }}\">
         <meta name=\"title\" content=\"{{ this.page.meta_title }}\">

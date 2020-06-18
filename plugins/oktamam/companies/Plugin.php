@@ -3,6 +3,7 @@
 namespace OkTamam\Companies;
 
 use Backend;
+use October\Rain\Auth\Models\User;
 use RainLab\User\Controllers\Users;
 use System\Classes\PluginBase;
 
@@ -11,6 +12,10 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['rainlab.user'];
     /**
      * Returns information about this plugin.
      *
@@ -46,17 +51,19 @@ class Plugin extends PluginBase
     public function boot()
     {
         Users::extendFormFields(function ($form, $model, $context) {
-            $form->addFields([
-                'role' => [
-                    'label'   => 'Role',
-                    'comment' => 'Select the user role',
-                    'type'    => 'dropdown',
-                    'options' => [
-                        'admin',
-                        'normal'
-                    ]
+            $form->addTabFields([
+                'permision' => [
+                    'label'   => 'permision',
+                    'type'    => 'text',
+                    'tab' => 'Rols'
                 ]
             ]);
+        });
+
+        User::extend(function ($model) {
+            $model->addDynamicMethod('isAdmin', function() use ($model) {
+                return !! $model->permision == 'admin';
+            });
         });
     }
 }

@@ -1,7 +1,3 @@
-[account]
-paramCode = "code"
-forceSecure = 0
-requirePassword = 0
 ==
 <header class="bg-gray-900">
     <div class="container mx-auto px-6">
@@ -14,10 +10,15 @@ requirePassword = 0
             </div>
 
             <div class="flex items-center -mx-2 mt-2 sm:mt-0">
-                {% if user %}
+                {% if not user %}
                 <a href="{{'register'|page}}"
                     class="mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800">Sign
                     Up</a>
+
+                {% else %}
+                <a data-request="onLogout" data-request-data="redirect: '/'"
+                    class="mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800">Sign
+                    Out</a>
                 {% endif %}
             </div>
         </nav>

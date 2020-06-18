@@ -47,16 +47,23 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
             <div class=\"flex items-center -mx-2 mt-2 sm:mt-0\">
                 ";
         // line 12
-        if (($context["user"] ?? null)) {
+        if ( !($context["user"] ?? null)) {
             // line 13
             echo "                <a href=\"";
             echo $this->extensions['Cms\Twig\Extension']->pageFilter("register");
             echo "\"
                     class=\"mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800\">Sign
                     Up</a>
+
+                ";
+        } else {
+            // line 18
+            echo "                <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\"
+                    class=\"mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800\">Sign
+                    Out</a>
                 ";
         }
-        // line 17
+        // line 22
         echo "            </div>
         </nav>
 
@@ -66,8 +73,8 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
 
                 <h3 class=\"text-2xl font-semibold text-gray-100\">
                     Hello <span class=\"text-indigo-400\">";
-        // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "name", [], "any", false, false, false, 25), "html", null, true);
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "name", [], "any", false, false, false, 30), "html", null, true);
         echo "</span>
                 </h3>
 
@@ -76,25 +83,25 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
 
             <div class=\"md:w-1/2 flex md:justify-end mt-8 md:mt-0\">
                 ";
-        // line 32
+        // line 37
         if ( !($context["user"] ?? null)) {
-            // line 33
+            // line 38
             echo "                <div class=\"max-w-sm bg-white rounded-lg\">
                     <div class=\"p-5 text-center\">
                         <h2 class=\"text-2xl font-semibold text-gray-700 fo\">Sign In</h2>
 
                         ";
-            // line 37
+            // line 42
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 38
+            // line 43
             echo "
                     </div>
                 </div>
                 ";
         }
-        // line 42
+        // line 47
         echo "
             </div>
         </div>
@@ -114,7 +121,7 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
 
     public function getDebugInfo()
     {
-        return array (  98 => 42,  92 => 38,  88 => 37,  82 => 33,  80 => 32,  70 => 25,  60 => 17,  52 => 13,  50 => 12,  37 => 1,);
+        return array (  105 => 47,  99 => 43,  95 => 42,  89 => 38,  87 => 37,  77 => 30,  67 => 22,  61 => 18,  52 => 13,  50 => 12,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -130,10 +137,15 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
             </div>
 
             <div class=\"flex items-center -mx-2 mt-2 sm:mt-0\">
-                {% if user %}
+                {% if not user %}
                 <a href=\"{{'register'|page}}\"
                     class=\"mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800\">Sign
                     Up</a>
+
+                {% else %}
+                <a data-request=\"onLogout\" data-request-data=\"redirect: '/'\"
+                    class=\"mx-2 px-3 py-2 font-semibold bg-black rounded text-sm text-white hover:bg-gray-800\">Sign
+                    Out</a>
                 {% endif %}
             </div>
         </nav>
