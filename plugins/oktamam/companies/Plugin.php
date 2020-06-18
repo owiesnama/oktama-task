@@ -3,6 +3,7 @@
 namespace OkTamam\Companies;
 
 use Backend;
+use RainLab\User\Controllers\Users;
 use System\Classes\PluginBase;
 
 /**
@@ -40,5 +41,22 @@ class Plugin extends PluginBase
             'OkTamam\Companies\Components\CreateEmployee' => 'createEmployee',
             'OkTamam\Companies\Components\Dashboard' => 'companiesDashboard',
         ];
+    }
+
+    public function boot()
+    {
+        Users::extendFormFields(function ($form, $model, $context) {
+            $form->addFields([
+                'role' => [
+                    'label'   => 'Role',
+                    'comment' => 'Select the user role',
+                    'type'    => 'dropdown',
+                    'options' => [
+                        'admin',
+                        'normal'
+                    ]
+                ]
+            ]);
+        });
     }
 }

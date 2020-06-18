@@ -3,3 +3,5 @@
   - Create companies and employees tables
   - create_companies_table.php
   - create_employees_table.php
+  - Add role column to Rainlab users plugin
+  - users_add_role.php

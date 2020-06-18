@@ -155,4 +155,9 @@
   'OkTamam\\Companies\\Components\\Dashboard' => 'plugins/oktamam/companies/components/Dashboard.php',
   'OkTamam\\Companies\\Models\\Company' => 'plugins/oktamam/companies/models/Company.php',
   'OkTamam\\Companies\\Components\\CreateCompany' => 'plugins/oktamam/companies/components/CreateCompany.php',
+  'RainLab\\User\\Controllers\\Users' => 'plugins/rainlab/user/controllers/Users.php',
+  'RainLab\\User\\Models\\MailBlocker' => 'plugins/rainlab/user/models/MailBlocker.php',
+  'Backend\\Traits\\FormModelWidget' => 'modules/backend/traits/FormModelWidget.php',
+  'Backend\\FormWidgets\\Relation' => 'modules/backend/formwidgets/Relation.php',
+  'Backend\\FormWidgets\\FileUpload' => 'modules/backend/formwidgets/FileUpload.php',
 );
