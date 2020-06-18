@@ -37,12 +37,11 @@ class __TwigTemplate_a5f76b9f00a7635b3d80873c094978a1f52f66ce6b7fe76cf6d117a664f
         echo "<div class=\"max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md\">
     <h2 class=\"text-lg text-gray-700 font-semibold capitalize\">New employee</h2>
 
-    <form id=\"addEmployeeForm\"
-    data-request=\"";
-        // line 5
+    <form id=\"addEmployeeForm\" data-request=\"";
+        // line 4
         echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
         echo "::onAddEmployee\"
-    data-request-success=\"\$('addEmployeeForm').reset()\">
+        data-request-success=\"\$('addEmployeeForm').reset()\">
         <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4\">
             <div>
                 <label class=\"text-gray-700\" for=\"firstName\">First name</label>
@@ -66,6 +65,29 @@ class __TwigTemplate_a5f76b9f00a7635b3d80873c094978a1f52f66ce6b7fe76cf6d117a664f
                 <label class=\"text-gray-700\" for=\"phone\">Phone</label>
                 <input id=\"phone\" type=\"text\" name=\"phone\"
                     class=\"w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white\">
+            </div>
+            <div>
+                <label class=\"text-gray-700\" for=\"company\">company</label>
+                <select id=\"company\" name=\"company\"
+                    class=\"w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white\">
+                    ";
+        // line 34
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["__SELF__"] ?? null), "companies", [], "any", false, false, false, 34));
+        foreach ($context['_seq'] as $context["_key"] => $context["company"]) {
+            // line 35
+            echo "                    <option value=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 35), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "name", [], "any", false, false, false, 35), "html", null, true);
+            echo "</option>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['company'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 37
+        echo "                </select>
             </div>
         </div>
 
@@ -89,7 +111,7 @@ class __TwigTemplate_a5f76b9f00a7635b3d80873c094978a1f52f66ce6b7fe76cf6d117a664f
 
     public function getDebugInfo()
     {
-        return array (  43 => 5,  37 => 1,);
+        return array (  90 => 37,  79 => 35,  75 => 34,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -97,9 +119,8 @@ class __TwigTemplate_a5f76b9f00a7635b3d80873c094978a1f52f66ce6b7fe76cf6d117a664f
         return new Source("<div class=\"max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md\">
     <h2 class=\"text-lg text-gray-700 font-semibold capitalize\">New employee</h2>
 
-    <form id=\"addEmployeeForm\"
-    data-request=\"{{__SELF__}}::onAddEmployee\"
-    data-request-success=\"\$('addEmployeeForm').reset()\">
+    <form id=\"addEmployeeForm\" data-request=\"{{__SELF__}}::onAddEmployee\"
+        data-request-success=\"\$('addEmployeeForm').reset()\">
         <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4\">
             <div>
                 <label class=\"text-gray-700\" for=\"firstName\">First name</label>
@@ -123,6 +144,15 @@ class __TwigTemplate_a5f76b9f00a7635b3d80873c094978a1f52f66ce6b7fe76cf6d117a664f
                 <label class=\"text-gray-700\" for=\"phone\">Phone</label>
                 <input id=\"phone\" type=\"text\" name=\"phone\"
                     class=\"w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white\">
+            </div>
+            <div>
+                <label class=\"text-gray-700\" for=\"company\">company</label>
+                <select id=\"company\" name=\"company\"
+                    class=\"w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white\">
+                    {% for company in __SELF__.companies %}
+                    <option value=\"{{company.id}}\">{{company.name}}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
 

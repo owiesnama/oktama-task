@@ -34,9 +34,16 @@ class __TwigTemplate_a096342e5a4bf67cde7d82d55f09d4f1803f97286dac2a1af194e7e4004
     {
         $macros = $this->macros;
         // line 1
+        echo "<div class=\"container mx-auto\">
+<h1 class=\"text-2xl capitalize font-bold border-b py-4 mb-4\">recent companies</h1>
+";
+        // line 3
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("companiesDashboard"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
+        // line 4
+        echo "
+</div>";
     }
 
     public function getTemplateName()
@@ -51,11 +58,15 @@ class __TwigTemplate_a096342e5a4bf67cde7d82d55f09d4f1803f97286dac2a1af194e7e4004
 
     public function getDebugInfo()
     {
-        return array (  37 => 1,);
+        return array (  45 => 4,  41 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% component 'companiesDashboard' %}", "/home/owiesnama/Projects/ok-tamam/themes/demo/pages/home.htm", "");
+        return new Source("<div class=\"container mx-auto\">
+<h1 class=\"text-2xl capitalize font-bold border-b py-4 mb-4\">recent companies</h1>
+{% component 'companiesDashboard' %}
+
+</div>", "/home/owiesnama/Projects/ok-tamam/themes/demo/pages/home.htm", "");
     }
 }

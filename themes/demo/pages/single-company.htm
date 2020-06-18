@@ -1,4 +1,20 @@
-<!-- component -->
+title = "single company"
+url = "/company/:company"
+layout = "default"
+is_hidden = 0
+==
+use OkTamam\Companies\Models\Company;
+
+function onStart()
+{
+  $this['company'] = Company::where('id',$this->param('company'))->firstOrFail();
+  $this['employees'] = $this['company']->employees()->paginate(1);
+}
+==
+<div class="container mx-auto">
+    <div class="text-xl mt-4 mb-2">{{company.name}}</div>
+
+    <!-- component -->
 <div class="bg-white pb-4 px-4 border my-4 rounded-md w-full">
     <div class="overflow-x-auto mt-6">
 
@@ -11,18 +27,18 @@
                 </tr>
             </thead>
             <tbody class="text-sm font-normal text-gray-700">
-                {%for employee in __SELF__.employees%}
+                {%for employee in employees%}
                 <tr class="hover:bg-gray-100 border-b border-gray-200 py-10">
                     <td class="px-4 py-4">{{employee.name}}</td>
                     <td class="px-4 py-4">{{employee.phone}}</td>
                     <td class="px-4 py-4">{{employee.email}}</td>
-                    <td class="px-4 py-4">{{employee.company.name ?:'---'}}</td>
                 </tr>
                 {%endfor%}
             </tbody>
         </table>
     </div>
 
-    {{ __SELF__.employees.render|raw }}
+    {{ employees.render|raw }}
 
+</div>
 </div>

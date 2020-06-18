@@ -3,6 +3,7 @@
 namespace OkTamam\Companies\Components;
 
 use Cms\Classes\ComponentBase;
+use OkTamam\Companies\Models\Company;
 use OkTamam\Companies\Models\Employee;
 
 class CreateEmployee extends ComponentBase
@@ -15,6 +16,10 @@ class CreateEmployee extends ComponentBase
         ];
     }
 
+    public function companies(){
+        return Company::all();
+    }
+
     public function onAddEmployee()
     {
         $employee = new Employee();
@@ -23,6 +28,7 @@ class CreateEmployee extends ComponentBase
         $employee->last_name = post('last_name');
         $employee->phone = post('phone');
         $employee->email = post('email');
+        $employee->company_id = post('company');
 
         $employee->save();
 

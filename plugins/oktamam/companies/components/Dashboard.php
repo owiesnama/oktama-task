@@ -17,6 +17,6 @@ class Dashboard extends ComponentBase
 
     public function recentCompanies()
     {
-        return Company::latest()->take(4);
+        return Company::latest()->get()->take(4);
     }
 }

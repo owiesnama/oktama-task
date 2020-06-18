@@ -1,9 +1,8 @@
 <div class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
     <h2 class="text-lg text-gray-700 font-semibold capitalize">New employee</h2>
 
-    <form id="addEmployeeForm"
-    data-request="{{__SELF__}}::onAddEmployee"
-    data-request-success="$('addEmployeeForm').reset()">
+    <form id="addEmployeeForm" data-request="{{__SELF__}}::onAddEmployee"
+        data-request-success="$('addEmployeeForm').reset()">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
             <div>
                 <label class="text-gray-700" for="firstName">First name</label>
@@ -27,6 +26,15 @@
                 <label class="text-gray-700" for="phone">Phone</label>
                 <input id="phone" type="text" name="phone"
                     class="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white">
+            </div>
+            <div>
+                <label class="text-gray-700" for="company">company</label>
+                <select id="company" name="company"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white">
+                    {% for company in __SELF__.companies %}
+                    <option value="{{company.id}}">{{company.name}}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
 
