@@ -5,10 +5,17 @@
             <a class="text-xl font-bold text-indigo-800 cursor-pointer">
                 {{company.name}}
             </a>
-            <form data-request="{{__SELF__}}::onDelete">
-                <input type="hidden" value="{{company.id}}" name="_companyId"/>
-                <button class="border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2">Delete</button>
-            </form>
+            <div class="flex">
+
+                <form data-request="{{__SELF__}}::onDelete">
+                    <input type="hidden" value="{{company.id}}" name="_companyId" />
+                    <button
+                        class="border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2">Delete</button>
+                </form>
+                <a href="/company/{{company.id}}/update"
+                    class="border inline-block mx-2 rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2">Edit</a>
+
+            </div>
         </div>
         <div class="flex text-gray-500 text-sm justify-between">
             <div>{{company.website}}</div>
