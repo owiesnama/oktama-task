@@ -2,6 +2,7 @@
 
 namespace OkTamam\Companies\Models;
 
+use Illuminate\Support\Facades\Storage;
 use Model;
 
 /**
@@ -40,4 +41,9 @@ class Company extends Model
     public $hasMany = [
         'employees' => 'OkTamam\Companies\Models\Employee',
     ];
+
+    public function getLogoAttribute($value)
+    {
+        return Storage::url($value);
+    }
 }

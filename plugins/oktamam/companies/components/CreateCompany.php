@@ -69,9 +69,20 @@ class CreateCompany extends ComponentBase
         $company->website = post('website');
         $company->email = post('email');
 
-        $company->logo = Input::file('logo');
+
+        $logoPath = 'public/'.$company->id .'.'. Input::file('logo')->getClientOriginalExtension();
+        $company->logo =  $logoPath;
+
+
+
+        Storage::put(
+            $logoPath,
+            file_get_contents(Input::file('logo')->getRealPath())
+        );
+
 
         $company->save();
+
 
         return redirect('/companies');
     }

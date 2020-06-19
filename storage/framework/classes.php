@@ -160,4 +160,6 @@
   'Backend\\Traits\\FormModelWidget' => 'modules/backend/traits/FormModelWidget.php',
   'Backend\\FormWidgets\\Relation' => 'modules/backend/formwidgets/Relation.php',
   'Backend\\FormWidgets\\FileUpload' => 'modules/backend/formwidgets/FileUpload.php',
+  'System\\Classes\\MediaLibrary' => 'modules/system/classes/MediaLibrary.php',
+  'System\\Classes\\MediaLibraryItem' => 'modules/system/classes/MediaLibraryItem.php',
 );
