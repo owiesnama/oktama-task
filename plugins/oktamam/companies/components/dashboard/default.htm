@@ -1,7 +1,7 @@
 <div class="grid grid-cols-3 gap-4 mt-8">
     {% for company in __SELF__.recentCompanies %}
     <div class="border rounded p-2">
-        <a class="text-xl font-bold text-indigo-800 cursor-pointer">
+        <a class="text-xl font-bold text-indigo-800 cursor-pointer" href="/company/{{company.id}}">
             {{company.name}}
         </a>
         <div class="flex text-gray-500 text-sm justify-between">

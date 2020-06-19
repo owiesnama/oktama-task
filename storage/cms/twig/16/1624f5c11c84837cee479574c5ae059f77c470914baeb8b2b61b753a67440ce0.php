@@ -43,51 +43,55 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
             // line 3
             echo "    <div class=\"border rounded p-2\">
         <div class=\"flex justify-between mb-4\">
-            <a class=\"text-xl font-bold text-indigo-800 cursor-pointer flex items-start mx-2\">
+            <a class=\"text-xl font-bold text-indigo-800 cursor-pointer flex items-start mx-2\"
+            href=\"/companies/";
+            // line 6
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 6), "html", null, true);
+            echo "\">
                 
                 <img src=\"";
-            // line 7
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "logo", [], "any", false, false, false, 7), "html", null, true);
+            // line 8
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "logo", [], "any", false, false, false, 8), "html", null, true);
             echo "\" alt=\"logo\" class=\"rounded-full w-16 h-16 mx-2\">
                 <span>";
-            // line 8
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "name", [], "any", false, false, false, 8), "html", null, true);
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "name", [], "any", false, false, false, 9), "html", null, true);
             echo "</span>
             </a>
             <div class=\"flex self-start\">
                 ";
-            // line 11
-            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "isAdmin", [], "method", false, false, false, 11)) {
-                // line 12
+            // line 12
+            if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "isAdmin", [], "method", false, false, false, 12)) {
+                // line 13
                 echo "                <form data-request=\"";
                 echo twig_escape_filter($this->env, ($context["__SELF__"] ?? null), "html", null, true);
                 echo "::onDelete\">
                     <input type=\"hidden\" value=\"";
-                // line 13
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 13), "html", null, true);
+                // line 14
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 14), "html", null, true);
                 echo "\" name=\"_companyId\" />
                     <button
                         class=\"border rounded-lg text-xs text-red-600 hover:bg-red-600 hover:text-white border-red-600 py-1 px-2\">Delete</button>
                 </form>
 
                 <a href=\"/company/";
-                // line 18
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 18), "html", null, true);
+                // line 19
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "id", [], "any", false, false, false, 19), "html", null, true);
                 echo "/update\"
                     class=\"border inline-block mx-2 rounded-lg text-xs text-blue-600 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2\">Edit</a>
                 ";
             }
-            // line 21
+            // line 22
             echo "            </div>
         </div>
         <div class=\"flex text-gray-500 text-sm justify-between\">
             <div>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "website", [], "any", false, false, false, 24), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "website", [], "any", false, false, false, 25), "html", null, true);
             echo "</div>
             <div>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "email", [], "any", false, false, false, 25), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["company"], "email", [], "any", false, false, false, 26), "html", null, true);
             echo "</div>
         </div>
     </div>
@@ -96,7 +100,7 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['company'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "</div>";
     }
 
@@ -112,7 +116,7 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
 
     public function getDebugInfo()
     {
-        return array (  100 => 29,  90 => 25,  86 => 24,  81 => 21,  75 => 18,  67 => 13,  62 => 12,  60 => 11,  54 => 8,  50 => 7,  44 => 3,  40 => 2,  37 => 1,);
+        return array (  104 => 30,  94 => 26,  90 => 25,  85 => 22,  79 => 19,  71 => 14,  66 => 13,  64 => 12,  58 => 9,  54 => 8,  49 => 6,  44 => 3,  40 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -121,7 +125,8 @@ class __TwigTemplate_1ad9b6693fdaf6a0482e521b66e74a710e492e01fcc9550ddb0e8997b32
     {% for company in __SELF__.companies %}
     <div class=\"border rounded p-2\">
         <div class=\"flex justify-between mb-4\">
-            <a class=\"text-xl font-bold text-indigo-800 cursor-pointer flex items-start mx-2\">
+            <a class=\"text-xl font-bold text-indigo-800 cursor-pointer flex items-start mx-2\"
+            href=\"/companies/{{company.id}}\">
                 
                 <img src=\"{{company.logo}}\" alt=\"logo\" class=\"rounded-full w-16 h-16 mx-2\">
                 <span>{{company.name}}</span>
