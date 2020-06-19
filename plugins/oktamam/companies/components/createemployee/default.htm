@@ -3,19 +3,24 @@
         {{__SELF__.param('employee') ? 'Update employee' : 'new employee'}}</h2>
 
     <form id="addEmployeeForm"
-        data-request="{{__SELF__.param('employee') ? __SELF__~'::onUpdateEmployee' : __SELF__~'::onAddEmployee'}}">
+        data-request="{{__SELF__.param('employee') ? __SELF__~'::onUpdateEmployee' : __SELF__~'::onAddEmployee'}}"
+        data-request-validate
+        data-request-flash>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
             <div>
                 <label class="text-gray-700" for="firstName">First name</label>
                 <input id="firstName" type="text" name='first_name' value="{{__SELF__.employee.first_name}}"
                     class="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white">
+                    <span class="text-sm text-red-600 capitalize mt-2" data-validate-for='first_name'></span>
             </div>
 
             <div>
                 <label class="text-gray-700" for="lastName">Last Name</label>
                 <input id="lastName" type="text" name="last_name" value="{{__SELF__.employee.last_name}}"
                     class="w-full mt-2 px-4 py-2 block rounded bg-gray-200 text-gray-800 border border-gray-300 focus:outline-none focus:bg-white">
-            </div>
+                    <span class="text-sm text-red-600 capitalize mt-2" data-validate-for='last_name'></span>
+
+                </div>
 
             <div>
                 <label class="text-gray-700" for="email">Email</label>
@@ -44,5 +49,6 @@
             <button type="submit"
                 class="px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700">{{__SELF__.param('company') ? 'Update' : 'Save'}}</button>
         </div>
+
     </form>
 </div>

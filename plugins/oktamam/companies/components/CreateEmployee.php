@@ -3,6 +3,8 @@
 namespace OkTamam\Companies\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Validator;
+use October\Rain\Exception\ValidationException;
 use OkTamam\Companies\Models\Company;
 use OkTamam\Companies\Models\Employee;
 use RainLab\User\Facades\Auth;
@@ -44,6 +46,10 @@ class CreateEmployee extends ComponentBase
     {
         $employee = new Employee();
 
+        if ($this->validatedRequest()->fails()) {
+            throw new ValidationException($this->validatedRequest());
+        }
+
         $employee->first_name = post('first_name');
         $employee->last_name = post('last_name');
         $employee->phone = post('phone');
@@ -60,6 +66,10 @@ class CreateEmployee extends ComponentBase
     {
         $employee = Employee::find($this->param('employee'));
 
+
+        if ($this->validatedRequest()->fails()) {
+            throw new ValidationException($this->validatedRequest());
+        }
         $employee->first_name = post('first_name');
         $employee->last_name = post('last_name');
         $employee->phone = post('phone');
@@ -69,5 +79,17 @@ class CreateEmployee extends ComponentBase
         $employee->save();
 
         return redirect('/employees');
+    }
+
+
+    public function validatedRequest()
+    {
+        return Validator::make(
+            post(),
+            [
+                'first_name' => 'required',
+                'last_name' => 'required'
+            ]
+        );
     }
 }
