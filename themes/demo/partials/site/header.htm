@@ -37,11 +37,36 @@
 
             <div class="md:w-1/2 flex md:justify-end mt-8 md:mt-0">
                 {% if not user %}
-                <div class="max-w-sm bg-white rounded-lg">
+                <div class=" bg-white rounded-lg">
                     <div class="p-5 text-center">
                         <h2 class="text-2xl font-semibold text-gray-700 fo">Sign In</h2>
 
-                        {% partial account ~ '::signin' %}
+                        {{ form_ajax('onSignin') }}
+                        <div class="flex flex-col mb-4">
+                            <label for="userSigninLogin" class="self-start">{{ loginAttributeLabel }}</label>
+                            <input name="login" type="text" class="border rounded py-4 px-2 w-full" id="userSigninLogin"
+                                placeholder="Enter your {{ loginAttributeLabel|lower }}" />
+                        </div>
+
+                        <div class="flex flex-col mb-4">
+                            <label for="userSigninPassword" class="self-start">Password</label>
+                            <input name="password" type="password" class="border rounded py-4 px-2 wml-2" id="userSigninPassword"
+                                placeholder="Enter your password" />
+                        </div>
+
+                        {% if rememberLoginMode == 'ask' %}
+                        <div class="flex mb-4">
+                            <div class="checkbox">
+                                <label><input name="remember" type="checkbox" value="1">Stay logged in</label>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <button type="submit" class="bg-blue-600 py-2 px-4 rounded text-white focus:shadow-outline">Sign in</button>
+
+                        {{ form_close() }}
+
+                        
 
                     </div>
                 </div>

@@ -87,22 +87,59 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
         // line 38
         if ( !($context["user"] ?? null)) {
             // line 39
-            echo "                <div class=\"max-w-sm bg-white rounded-lg\">
+            echo "                <div class=\" bg-white rounded-lg\">
                     <div class=\"p-5 text-center\">
                         <h2 class=\"text-2xl font-semibold text-gray-700 fo\">Sign In</h2>
 
                         ";
             // line 43
-            $context['__cms_partial_params'] = [];
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction((($context["account"] ?? null) . "::signin")            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            // line 44
+            echo call_user_func_array($this->env->getFunction('form_ajax')->getCallable(), ["ajax", "onSignin"]);
             echo "
+                        <div class=\"flex flex-col mb-4\">
+                            <label for=\"userSigninLogin\" class=\"self-start\">";
+            // line 45
+            echo twig_escape_filter($this->env, ($context["loginAttributeLabel"] ?? null), "html", null, true);
+            echo "</label>
+                            <input name=\"login\" type=\"text\" class=\"border rounded py-4 px-2 w-full\" id=\"userSigninLogin\"
+                                placeholder=\"Enter your ";
+            // line 47
+            echo twig_escape_filter($this->env, twig_lower_filter($this->env, ($context["loginAttributeLabel"] ?? null)), "html", null, true);
+            echo "\" />
+                        </div>
+
+                        <div class=\"flex flex-col mb-4\">
+                            <label for=\"userSigninPassword\" class=\"self-start\">Password</label>
+                            <input name=\"password\" type=\"password\" class=\"border rounded py-4 px-2 wml-2\" id=\"userSigninPassword\"
+                                placeholder=\"Enter your password\" />
+                        </div>
+
+                        ";
+            // line 56
+            if ((($context["rememberLoginMode"] ?? null) == "ask")) {
+                // line 57
+                echo "                        <div class=\"flex mb-4\">
+                            <div class=\"checkbox\">
+                                <label><input name=\"remember\" type=\"checkbox\" value=\"1\">Stay logged in</label>
+                            </div>
+                        </div>
+                        ";
+            }
+            // line 63
+            echo "
+                        <button type=\"submit\" class=\"bg-blue-600 py-2 px-4 rounded text-white focus:shadow-outline\">Sign in</button>
+
+                        ";
+            // line 66
+            echo call_user_func_array($this->env->getFunction('form_close')->getCallable(), ["close"]);
+            echo "
+
+                        
+
                     </div>
                 </div>
                 ";
         }
-        // line 48
+        // line 73
         echo "
             </div>
         </div>
@@ -122,7 +159,7 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
 
     public function getDebugInfo()
     {
-        return array (  106 => 48,  100 => 44,  96 => 43,  90 => 39,  88 => 38,  78 => 31,  68 => 23,  62 => 19,  53 => 14,  51 => 13,  37 => 1,);
+        return array (  143 => 73,  133 => 66,  128 => 63,  120 => 57,  118 => 56,  106 => 47,  101 => 45,  96 => 43,  90 => 39,  88 => 38,  78 => 31,  68 => 23,  62 => 19,  53 => 14,  51 => 13,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -165,11 +202,36 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
 
             <div class=\"md:w-1/2 flex md:justify-end mt-8 md:mt-0\">
                 {% if not user %}
-                <div class=\"max-w-sm bg-white rounded-lg\">
+                <div class=\" bg-white rounded-lg\">
                     <div class=\"p-5 text-center\">
                         <h2 class=\"text-2xl font-semibold text-gray-700 fo\">Sign In</h2>
 
-                        {% partial account ~ '::signin' %}
+                        {{ form_ajax('onSignin') }}
+                        <div class=\"flex flex-col mb-4\">
+                            <label for=\"userSigninLogin\" class=\"self-start\">{{ loginAttributeLabel }}</label>
+                            <input name=\"login\" type=\"text\" class=\"border rounded py-4 px-2 w-full\" id=\"userSigninLogin\"
+                                placeholder=\"Enter your {{ loginAttributeLabel|lower }}\" />
+                        </div>
+
+                        <div class=\"flex flex-col mb-4\">
+                            <label for=\"userSigninPassword\" class=\"self-start\">Password</label>
+                            <input name=\"password\" type=\"password\" class=\"border rounded py-4 px-2 wml-2\" id=\"userSigninPassword\"
+                                placeholder=\"Enter your password\" />
+                        </div>
+
+                        {% if rememberLoginMode == 'ask' %}
+                        <div class=\"flex mb-4\">
+                            <div class=\"checkbox\">
+                                <label><input name=\"remember\" type=\"checkbox\" value=\"1\">Stay logged in</label>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <button type=\"submit\" class=\"bg-blue-600 py-2 px-4 rounded text-white focus:shadow-outline\">Sign in</button>
+
+                        {{ form_close() }}
+
+                        
 
                     </div>
                 </div>
