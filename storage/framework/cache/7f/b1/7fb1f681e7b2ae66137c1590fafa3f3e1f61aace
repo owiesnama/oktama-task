@@ -1,0 +1,16 @@
+1592584883a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:251:"title = "Demonstration"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[companiesDashboard]
+==
+<div class="container mx-auto">
+<h1 class="text-2xl capitalize font-bold border-b py-4 mb-4">recent companies</h1>
+{% component 'companiesDashboard' %}
+
+</div>";s:5:"mtime";i:1592478265;s:6:"markup";s:159:"<div class="container mx-auto">
+<h1 class="text-2xl capitalize font-bold border-b py-4 mb-4">recent companies</h1>
+{% component 'companiesDashboard' %}
+
+</div>";s:4:"code";N;s:5:"title";s:13:"Demonstration";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:18:"companiesDashboard";a:0:{}}}

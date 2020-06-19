@@ -162,4 +162,6 @@
   'Backend\\FormWidgets\\FileUpload' => 'modules/backend/formwidgets/FileUpload.php',
   'System\\Classes\\MediaLibrary' => 'modules/system/classes/MediaLibrary.php',
   'System\\Classes\\MediaLibraryItem' => 'modules/system/classes/MediaLibraryItem.php',
+  'OkTamam\\Companies\\Controllers\\EmployeesController' => 'plugins/oktamam/companies/controllers/EmployeesController.php',
+  'OkTamam\\Companies\\Controllers\\CompaniesController' => 'plugins/oktamam/companies/controllers/CompaniesController.php',
 );

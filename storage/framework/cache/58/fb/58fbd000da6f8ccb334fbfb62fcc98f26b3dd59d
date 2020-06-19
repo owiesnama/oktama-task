@@ -1,0 +1,8 @@
+1592584883a:1:{s:19:"create-employee.htm";a:10:{s:8:"fileName";s:19:"create-employee.htm";s:7:"content";s:137:"title = "create employee"
+url = "/employee/create"
+layout = "default"
+is_hidden = 0
+
+[createEmployee]
+==
+{% component 'createEmployee' %}";s:5:"mtime";i:1592405616;s:6:"markup";s:32:"{% component 'createEmployee' %}";s:4:"code";N;s:5:"title";s:15:"create employee";s:3:"url";s:16:"/employee/create";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:14:"createEmployee";a:0:{}}}
