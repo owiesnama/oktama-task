@@ -17,8 +17,9 @@ php artisan october:up
 ```
 php artisan serve
 ```
+You should change the env vars to match your configrations 
 
-*Note: there is and admin user seeded to the database with credentials:*
+*Note: there is an admin user seeded to the database with credentials:*
 
 Email: admin@admin.com
 Password: password
