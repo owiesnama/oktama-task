@@ -1,12 +1,12 @@
-1592606469a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3519:"==
+1592642039a:1:{s:15:"site/header.htm";a:6:{s:8:"fileName";s:15:"site/header.htm";s:7:"content";s:3551:"==
 <header class="bg-gray-900">
     <div class="container mx-auto px-6">
         <nav class="flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center">
             <div class="flex items-center">
-                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
-                <ul class="text-white flex items-center mx-4">
-                    <li><a href="/companies">Companies</a></li>
-                    <li><a href="/employees">Employees</a></li>
+                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300 mr-4">Ok Tamam</a>
+                <ul class="text-white flex items-center -mx-2">
+                    <li class="mx-2"><a href="/companies">Companies</a></li>
+                    <li class="mx-2"><a href="/employees">Employees</a></li>
                 </ul>
             </div>
 
@@ -75,14 +75,14 @@
             </div>
         </div>
     </div>
-</header>";s:5:"mtime";i:1592605173;s:6:"markup";s:3515:"<header class="bg-gray-900">
+</header>";s:5:"mtime";i:1592640690;s:6:"markup";s:3547:"<header class="bg-gray-900">
     <div class="container mx-auto px-6">
         <nav class="flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center">
             <div class="flex items-center">
-                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300">Ok Tamam</a>
-                <ul class="text-white flex items-center mx-4">
-                    <li><a href="/companies">Companies</a></li>
-                    <li><a href="/employees">Employees</a></li>
+                <a href="/" class="text-2xl font-semibold text-white hover:text-gray-300 mr-4">Ok Tamam</a>
+                <ul class="text-white flex items-center -mx-2">
+                    <li class="mx-2"><a href="/companies">Companies</a></li>
+                    <li class="mx-2"><a href="/employees">Employees</a></li>
                 </ul>
             </div>
 

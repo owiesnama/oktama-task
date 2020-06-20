@@ -1,4 +1,4 @@
-1592606469a:1:{s:18:"single-company.htm";a:9:{s:8:"fileName";s:18:"single-company.htm";s:7:"content";s:1563:"title = "single company"
+1592642178a:1:{s:18:"single-company.htm";a:9:{s:8:"fileName";s:18:"single-company.htm";s:7:"content";s:1564:"title = "single company"
 url = "/company/:company"
 layout = "default"
 is_hidden = 0
@@ -8,7 +8,7 @@ use OkTamam\Companies\Models\Company;
 function onStart()
 {
   $this['company'] = Company::where('id',$this->param('company'))->firstOrFail();
-  $this['employees'] = $this['company']->employees()->paginate(1);
+  $this['employees'] = $this['company']->employees()->paginate(10);
 }
 ==
 <div class="container mx-auto">
@@ -41,7 +41,7 @@ function onStart()
     {{ employees.render|raw }}
 
 </div>
-</div>";s:5:"mtime";i:1592584936;s:6:"markup";s:1262:"<div class="container mx-auto">
+</div>";s:5:"mtime";i:1592641577;s:6:"markup";s:1262:"<div class="container mx-auto">
     <div class="text-xl mt-4 mb-2">{{company.name}}'s employees</div>
 
     <!-- component -->
@@ -71,10 +71,10 @@ function onStart()
     {{ employees.render|raw }}
 
 </div>
-</div>";s:4:"code";s:210:"use OkTamam\Companies\Models\Company;
+</div>";s:4:"code";s:211:"use OkTamam\Companies\Models\Company;
 
 function onStart()
 {
   $this['company'] = Company::where('id',$this->param('company'))->firstOrFail();
-  $this['employees'] = $this['company']->employees()->paginate(1);
+  $this['employees'] = $this['company']->employees()->paginate(10);
 }";s:5:"title";s:14:"single company";s:3:"url";s:17:"/company/:company";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

@@ -14,7 +14,7 @@ class Companies extends ComponentBase
     }
 
     public function companies(){
-        return Company::all();
+        return Company::paginate(10);
     }
 
     public function onDelete(){

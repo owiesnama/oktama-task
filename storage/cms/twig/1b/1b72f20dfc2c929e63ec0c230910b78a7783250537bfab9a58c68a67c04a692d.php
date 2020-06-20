@@ -38,10 +38,10 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
     <div class=\"container mx-auto px-6\">
         <nav class=\"flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center\">
             <div class=\"flex items-center\">
-                <a href=\"/\" class=\"text-2xl font-semibold text-white hover:text-gray-300\">Ok Tamam</a>
-                <ul class=\"text-white flex items-center mx-4\">
-                    <li><a href=\"/companies\">Companies</a></li>
-                    <li><a href=\"/employees\">Employees</a></li>
+                <a href=\"/\" class=\"text-2xl font-semibold text-white hover:text-gray-300 mr-4\">Ok Tamam</a>
+                <ul class=\"text-white flex items-center -mx-2\">
+                    <li class=\"mx-2\"><a href=\"/companies\">Companies</a></li>
+                    <li class=\"mx-2\"><a href=\"/employees\">Employees</a></li>
                 </ul>
             </div>
 
@@ -168,10 +168,10 @@ class __TwigTemplate_1b829d2813a2c859a0319f24b7d098ad999401a72f8d2b529051ae26a03
     <div class=\"container mx-auto px-6\">
         <nav class=\"flex flex-col py-2 sm:flex-row sm:justify-between sm:items-center\">
             <div class=\"flex items-center\">
-                <a href=\"/\" class=\"text-2xl font-semibold text-white hover:text-gray-300\">Ok Tamam</a>
-                <ul class=\"text-white flex items-center mx-4\">
-                    <li><a href=\"/companies\">Companies</a></li>
-                    <li><a href=\"/employees\">Employees</a></li>
+                <a href=\"/\" class=\"text-2xl font-semibold text-white hover:text-gray-300 mr-4\">Ok Tamam</a>
+                <ul class=\"text-white flex items-center -mx-2\">
+                    <li class=\"mx-2\"><a href=\"/companies\">Companies</a></li>
+                    <li class=\"mx-2\"><a href=\"/employees\">Employees</a></li>
                 </ul>
             </div>
 
