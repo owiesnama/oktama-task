@@ -1,0 +1,8 @@
+1592645434a:1:{s:18:"create-company.htm";a:10:{s:8:"fileName";s:18:"create-company.htm";s:7:"content";s:133:"title = "create company"
+url = "/company/create"
+layout = "default"
+is_hidden = 0
+
+[createCompany]
+==
+{% component 'createCompany' %}";s:5:"mtime";i:1592640893;s:6:"markup";s:31:"{% component 'createCompany' %}";s:4:"code";N;s:5:"title";s:14:"create company";s:3:"url";s:15:"/company/create";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:13:"createCompany";a:0:{}}}

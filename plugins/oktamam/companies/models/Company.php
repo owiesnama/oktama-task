@@ -44,6 +44,6 @@ class Company extends Model
 
     public function getLogoAttribute($value)
     {
-        return Storage::url($value);
+        return public_path($value);
     }
 }

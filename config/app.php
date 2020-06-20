@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'https://ok-tamam.app/',
+    'url' => env('APP_URL', 'https://ok-tamam.app/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'key' => 'WoNSqyVexyU3cxD1JaGw2S5Gr207aU4R',
+    'key' => env('APP_KEY', ''),
 
     'cipher' => 'AES-256-CBC',
 
