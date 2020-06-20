@@ -42,8 +42,4 @@ class Company extends Model
         'employees' => 'OkTamam\Companies\Models\Employee',
     ];
 
-    public function getLogoAttribute($value)
-    {
-        return public_path($value);
-    }
 }

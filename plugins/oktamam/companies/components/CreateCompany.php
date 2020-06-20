@@ -50,13 +50,14 @@ class CreateCompany extends ComponentBase
         $company->website = post('website');
         $company->email = post('email');
 
-        $company->logo =  $company->id . '.' . Input::file('logo')->getClientOriginalExtension();
+        $path =  $company->id . '.' . Input::file('logo')->getClientOriginalExtension();
+        $company->logo = $path;
 
 
 
 
         Storage::put(
-            'public/' . $company->logo,
+            'public/' . $path,
             file_get_contents(Input::file('logo')->getRealPath())
         );
 
@@ -78,13 +79,14 @@ class CreateCompany extends ComponentBase
         $company->email = post('email');
 
 
-        $company->logo =  $company->id . '.' . Input::file('logo')->getClientOriginalExtension();
+        $path =  $company->id . '.' . Input::file('logo')->getClientOriginalExtension();
+        $company->logo = $path;
 
 
 
 
         Storage::put(
-            'public/' . $company->logo,
+            'public/' . $path,
             file_get_contents(Input::file('logo')->getRealPath())
         );
 
